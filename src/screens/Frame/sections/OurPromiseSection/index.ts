@@ -1,1 +1,0 @@
-export { OurPromiseSection } from "./OurPromiseSection";

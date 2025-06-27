@@ -1,1 +1,0 @@
-export { ActionTeamSection } from "./ActionTeamSection";

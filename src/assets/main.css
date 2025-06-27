@@ -1,0 +1,265 @@
+@import './base.css';
+@import 'tailwindcss';
+#app {
+  width: 100%;
+  font-weight: normal;
+  font-family: 'Copperplate', 'Courier New', Courier, monospace;
+}
+
+a,
+.green {
+  text-decoration: none;
+  color: hsla(160, 100%, 37%, 1);
+  transition: 0.4s;
+  padding: 3px;
+}
+
+.scrollingBanner {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  white-space: nowrap;
+  --scroll-shadow-size: 300px;
+  overflow-x: hidden;
+}
+
+.scrollingBanner:hover .scrollingContent {
+  animation-play-state: paused;
+}
+
+.scrollingContent {
+  width: max-content;
+  display: flex;
+  gap: 50px; /* Adjust spacing */
+  align-items: stretch;
+  grid-gap: 40px;
+  --gap: 40px;
+  animation: scrolling-banner 20s linear infinite;
+  overflow-x: hidden;
+}
+
+@keyframes scrolling-banner {
+  0% {
+    transform: translateX(calc(-50% - var(--gap) / 2));
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes fade-diagonal-in-left2right-down {
+  from {
+    opacity: 0;
+    transform: translate(-60px, -60px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+  }
+}
+
+@keyframes fade-diagonal-in-left2right-up {
+  from {
+    opacity: 0;
+    transform: translate(-60px, 60px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+  }
+}
+
+@keyframes fade-diagonal-in-right2left-down {
+  from {
+    opacity: 0;
+    transform: translate(60px, -60px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+  }
+}
+
+@keyframes fade-diagonal-in-right2left-up {
+  from {
+    opacity: 0;
+    transform: translate(60px, 60px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+  }
+}
+
+@keyframes fade-diagonal-in-right2left {
+  from {
+    opacity: 0;
+    transform: translateX(160px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0, 0) scale(1);
+  }
+}
+
+@keyframes fade-diagonal-in-left2right {
+  from {
+    opacity: 0;
+    transform: translateX(-160px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes fade-diagonal-in-top2bottom {
+  from {
+    opacity: 0;
+    transform: translateY(-160px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes fade-diagonal-in-bottom2top {
+  from {
+    opacity: 0;
+    transform: translateY(160px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Example: fade-in and scale-up animation */
+@keyframes fadeScaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.7);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeScaleOut {
+  from {
+    opacity: 0;
+    transform: scale(1);
+  }
+  to {
+    opacity: 1;
+    transform: scale(0);
+  }
+}
+
+.animate-fade-scale-out {
+  animation: fadeScaleOut 0.8s forwards ease-out;
+}
+
+.animate-fade-scale-in {
+  animation: fadeScaleIn 0.8s ease-out forwards;
+}
+
+@keyframes expandDown {
+  from {
+    max-height: 0;
+    opacity: 0;
+    transform: scale(0.7);
+  }
+  to {
+    max-height: 1000px;
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-expand-down {
+  animation: expandDown 0.7s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@media (min-width: 2200px) {
+  .scale-at-x {
+    transform: scale(1.5);
+  }
+  .x-margin-right-220 {
+    margin-right: 220px;
+  }
+  .x-font-small {
+    font-size: 24px;
+  }
+  .x-font-normal {
+    font-size: 30px;
+  }
+  .x-font-medium {
+    font-size: 48px;
+  }
+  .x-font-large {
+    font-size: 65px;
+  }
+  .x-font-extra {
+    font-size: 80px;
+  }
+  .x-small-leading {
+    line-height: 45px;
+  }
+  .x-normal-leading {
+    line-height: 54px;
+  }
+  .x-max-width {
+    max-width: 1200px;
+  }
+
+  .x-width {
+    width: 1200px;
+  }
+  .x-margin-top--700 {
+    margin-top: -700px;
+  }
+  .x-margin-top-1100 {
+    margin-top: 1100px;
+  }
+  .x-padding-left-0 {
+    padding-left: 0;
+  }
+  .x-margin-right-100 {
+    margin-right: 150px;
+  }
+  .x-margin-left-100 {
+    margin-left: 100px;
+  }
+  .x-padding-left-40 {
+    padding-left: 40px;
+  }
+  .x-icon-100 {
+    width: 100px;
+    height: 100px;
+  }
+  .x-icon-80 {
+    width: 80px;
+    height: 80px;
+  }
+  .x-padding-top-500 {
+    padding-top: 500px;
+  }
+  .x-padding-top-200 {
+    padding-top: 200px;
+  }
+  .x-padding-top-700 {
+    padding-top: 700px;
+  }
+  .x-padding-bottom-400 {
+    padding-bottom: 400px;
+  }
+  .x-margin-left--150 {
+    margin-left: -150px;
+  }
+  .x-margin-left-100 {
+    margin-left: 100px;
+  }
+}
